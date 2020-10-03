@@ -6,11 +6,12 @@ export const SORT_PRODUCT = 'SORT_PRODUCT'
 
 
 export type Product = {
-    id: number
-    title: string
-    price: number
+    id:string
+    name: string
     description: string
-    category: string
+    sizes:string[]
+    price: number
+    categories: string[]
     image: string
 }
 

@@ -15,11 +15,11 @@ const ProductTile = ({ product }: CardProps) => {
           <img
             className={classes.image}
             src={product.image}
-            alt={`image of ${product.title}`}
+            alt={`image of ${product.name}`}
           />
         </div>
         <div className={classes.info}>
-          <div className={classes.name}>{product.title}</div>
+          <div className={classes.name}>{product.name}</div>
           <div className={classes.price}>{`${product.price}$`}</div>
         </div>
         <div className={classes.description}>
