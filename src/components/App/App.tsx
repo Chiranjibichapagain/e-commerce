@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getData, addProduct, removeProduct } from '../../redux/actions'
 import ProductTile from '../ProductTile'
+import UserRegistration from '../UserRegistration';
+import UserLogin from "../UserLogin";
 import useStyle from './styles'
 
 
@@ -48,9 +50,11 @@ const App = () => {
   return (
     <>
       <div className={classes.body}>
-        <div className={classes.products} >
+        <UserLogin/>
+        {/* <UserRegistration/> */}
+        {/* <div className={classes.products} >
           {tryItem && tryItem.map(product => <ProductTile product={product} />)}
-        </div>
+        </div> */}
       </div>
 
     </>

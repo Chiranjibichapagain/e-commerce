@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   toCartButton: {
-    width: "150px",
     backgroundColor: "#299B00",
     border: "none",
     padding: "12px",
@@ -72,7 +71,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   viewButton: {
-    width: "150px",
     backgroundColor: "#0040C3",
     border: "none",
     padding: "12px",
@@ -90,11 +88,17 @@ const useStyles = makeStyles((theme) => ({
       border: "1px solid orangered",
     },
   },
+  btnText: {
+    padding:'0px 0px 0px 10px'
+  },
 
   "@media only screen and (max-width: 768px)": {
     root: {
       width: "80vw",
     },
+    btnText: {
+      display:'none'
+    }
   },
 }));
 

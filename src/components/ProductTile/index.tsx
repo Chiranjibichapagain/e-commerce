@@ -1,11 +1,11 @@
-import React from 'react'
-
-import useStyle from './styles'
+import React from "react";
 import { CardProps } from '../../types/componentTypes'
 import Paper from "@material-ui/core/Paper";
 import Typography from '@material-ui/core/Typography';
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+
+import useStyle from "./styles";
 
 const ProductTile = ({ product }: CardProps) => {
     const classes = useStyle()
@@ -28,11 +28,11 @@ const ProductTile = ({ product }: CardProps) => {
         <div className={classes.actions}>
           <button className={classes.toCartButton}>
             <AddShoppingCartIcon />
-            <Typography>Add-to-cart</Typography>
+            <Typography className={classes.btnText}>Add-to-cart</Typography>
           </button>
           <button className={classes.viewButton}>
             <VisibilityIcon />
-            <Typography>View-item</Typography>
+            <Typography className={classes.btnText}>View-item</Typography>
           </button>
         </div>
       </Paper>
