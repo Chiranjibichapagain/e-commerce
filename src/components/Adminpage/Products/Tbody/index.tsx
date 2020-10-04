@@ -22,12 +22,12 @@ const Tbody = ({ data }: TbodyProps) => {
           <li>{item}</li>
         ))}
       </td>
-      <td style={{ listStyle: "none" }}>
+      <td className={classes.sizes} >
         {data.sizes.map((item: string) => (
           <li>{item}</li>
         ))}
       </td>
-      <td>
+      <td className={classes.actions}>
         <EditIcon className={classes.editIcon} />
         <DeleteIcon className={classes.deleteIcon} />
       </td>
