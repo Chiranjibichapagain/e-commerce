@@ -44,7 +44,7 @@ const Products = () => {
   return (
     <table>
       <Thead />
-      {data && data.map((product) => <Tbody data={product} />)}
+      {data && data.map((product) => <Tbody key={product.id} data={product} />)}
     </table>
   );
 };
