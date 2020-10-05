@@ -39,8 +39,8 @@ Modal.setAppElement("#root");
             className={classes.editIcon}
           />
           <DeleteIcon className={classes.deleteIcon} />
-          <Modal isOpen={open}>
-            <ProductEdit closeIt={setOpen} />
+          <Modal className={classes.modal} isOpen={open}>
+            <ProductEdit data={data} closeIt={setOpen} />
           </Modal>
         </td>
       </tr>

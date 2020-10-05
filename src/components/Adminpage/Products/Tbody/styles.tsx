@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     marginRight: "10px",
     color: "blue",
+    cursor: "pointer",
     transition: "0.3s",
     "&:hover": {
       backgroundColor: "#80FF8F",
@@ -65,10 +66,21 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "0px 0px 3px black",
     borderRadius: "5px",
     color: "red",
+    cursor: "pointer",
     transition: "0.5s",
     "&:hover": {
       backgroundColor: "#80FF8F",
     },
+  },
+
+  modal: {
+    backgroundColor: "rgb(255, 255, 255, 0.9)",
+    width: "900px",
+    display: "block",
+    margin: "20px auto",
+    boxShadow: "0px 0px 3px black",
+    padding: "20px",
+    borderRadius: "8px",
   },
 
   "@media only screen and (max-width: 768px)": {},
