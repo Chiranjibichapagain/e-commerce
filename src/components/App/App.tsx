@@ -7,6 +7,7 @@ import UserRegistration from '../UserRegistration';
 import UserLogin from "../UserLogin";
 import AdminPage from "../Adminpage";
 import Cart from "../Cart";
+import Nav from "../Nav";
 import useStyle from './styles'
 
 
@@ -60,8 +61,9 @@ const App = () => {
   return (
     <>
       <div className={classes.body}>
-        <Cart />
-        <AdminPage  />
+        <Nav />
+        {/* <Cart /> */}
+        {/* <AdminPage  /> */}
         {/* <UserLogin/> */}
         {/* <UserRegistration/> */}
         {/* <div className={classes.products} >
