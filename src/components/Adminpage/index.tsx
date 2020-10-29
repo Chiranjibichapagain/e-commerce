@@ -1,12 +1,15 @@
 import React from "react";
 
 import Products from "./Products";
-import Users from "./Users";
 import useStyles from "./styles";
 
 const AdminPage = () => {
   const classes = useStyles();
-  return <Products />;
+  return (
+    <div className={classes.root}>
+      <Products />
+    </div>
+  );
 };
 
-export default AdminPage;
+export default React.memo(AdminPage) ;

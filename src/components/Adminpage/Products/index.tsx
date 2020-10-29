@@ -1,52 +1,70 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Modal from "react-modal";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import Thead from "./Thead";
 import Tbody from "./Tbody";
+import Nav from "../Nav";
+import ProductAdd from "./ProductAdd";
+import {Product} from '../../../types/types'
+import { useGetProductsApi } from "../../../hook/useProductApi";
+import { useProductsApi } from "../../../hook/useProductApi";
 import useStyles from "./styles";
 
-const data = [
-  {
-    id: "1",
-    name: "Slim Fit T-Shirts",
-    description:
-      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    sizes: ["S", "M", "XL"],
-    price: 22.3,
-    categories: ["men clothing"],
-    image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-  },
-  {
-    id: "2",
-    name: "Slim Fit T-Shirts",
-    description:
-      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    sizes: ["S", "M", "XL"],
-    price: 22.3,
-    categories: ["men clothing"],
-    image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-  },
-  {
-    id: "3",
-    name: "Slim Fit T-Shirts",
-    description:
-      "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    sizes: ["S", "M", "XL"],
-    price: 22.3,
-    categories: ["men clothing"],
-    image:
-      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-  },
-];
-
+Modal.setAppElement("#root");
 const Products = () => {
+  const classes = useStyles();
+  const [products] = useGetProductsApi();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    console.log('getting products')
+  }, [products])
+
+  const {
+    handleProductUpdate,
+    handleProductDelete,
+    handleProductCreate,
+    error
+  } = useProductsApi();
+
   return (
-    <table>
-      <Thead />
-      {data && data.map((product) => <Tbody key={product.id} data={product} />)}
-    </table>
+    <div>
+      <Nav />
+      {products.length === 0 && (
+        <div className={classes.loading}>
+          <CircularProgress size="10rem" />
+          <h4>Loading data...</h4>
+        </div>
+      )}
+      {products.length > 0 && 
+      <div>
+        <table>
+        <Thead />
+        {products.map((product:Product) => (
+          <Tbody
+            key={product._id}
+            data={product}
+            handleProductUpdate={handleProductUpdate}
+            handleProductDelete={handleProductDelete}
+            error={error}
+          />
+        ))}
+        </table>
+      <span onClick={() => setOpen(true)} className={classes.addBtn}>
+        +
+      </span>
+      <Modal className={classes.modal} isOpen={open}>
+        <ProductAdd
+          closeIt={setOpen}
+          handleProductCreate={handleProductCreate}
+          error={error}
+        />
+      </Modal>
+      </div>
+      }
+    </div>
   );
 };
 
-export default Products;
+export default React.memo(Products);

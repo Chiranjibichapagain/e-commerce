@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
     margin: "0px",
     paddingRight: "20px",
   },
+  error: {
+    width:'600px',
+    textAlign: 'center',
+    fontSize: '14px',
+    color:'red'
+  },
 
   form: {
     display: "flex",
@@ -34,6 +40,14 @@ const useStyles = makeStyles((theme) => ({
 
   input: {
     width: "400px",
+    margin: "20px",
+    fontSize: "16px",
+    borderRadius: "6px",
+    color: "blue",
+  },
+
+  textArea: {
+    width: "840px",
     margin: "20px",
     fontSize: "16px",
   },
@@ -55,15 +69,21 @@ const useStyles = makeStyles((theme) => ({
   button: {
     width: "200px",
     margin: "40px 50px 0px 50px",
-    padding: "10px 0px",
+    padding: "15px 0px",
+    border: 'none',
+    borderRadius:'4px',
     backgroundColor: `${theme.palette.primary.main}`,
     color: "white",
     fontWeight: "bold",
+    transition:'0.3s ease-in-out',
 
     "&:hover": {
       color: "orangered",
+      backgroundColor: 'white',
+      border:'1px solid orangered'
     },
   },
+
 
   "@media only screen and (max-width: 768px)": {},
 }));

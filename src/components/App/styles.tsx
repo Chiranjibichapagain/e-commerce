@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   "@media only screen and (max-width: 768px)": {
     body: {
       width: "100vw",
+      marginTop:'30px'
     },
     products: {
       justifyContent: "center",

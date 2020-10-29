@@ -1,44 +1,18 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  actions: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginBottom: "30px",
-    height: "40px",
+  root: {
+    padding: "50px 250px",
   },
 
-  closeBtn: {
-    margin: "0px 0px 0px 0px",
-    color: "orangered",
-    cursor: "pointer",
-    fontSize: "25px",
-    transition: "0.4s ease-in-out",
-    "&:hover": {
-      fontSize: "28px",
-      color: "green",
-    },
-  },
-
-  checkoutBtn: {
-    backgroundColor: "orangered",
-    borderStyle: "none",
-    borderRadius: "4px",
-    color: "white",
-    padding: "10px",
-    fontWeight: "bold",
-    cursor: "pointer",
-    transition: "0.3s ease-in-out",
-
-    "&:hover": {
-      backgroundColor: "white",
-      color: "orangered",
-      border: "1px solid orangered",
-    },
+  backArrow: {
+    fontSize: '50px',
+    margin: "50px",
+    cursor:'pointer'
   },
 
   image: {
-    width: "400px",
+    width: "500px",
   },
 
   infoBox: {
@@ -50,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    borderLeft: "2px solid grey",
+    borderLeft: "0.7px solid #A0A0A0",
     paddingLeft: "25px",
   },
 
@@ -75,6 +49,27 @@ const useStyles = makeStyles((theme) => ({
   },
   size: {},
   category: {},
+
+  actions: {
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+
+  cart: {
+    width: "50px",
+    height: "50px",
+    padding: "10px",
+    borderRadius: "50%",
+    border: "2px solid orangered",
+    color: "green",
+    cursor: "pointer",
+    transition: "0.3s ease-in-out",
+    "&:hover": {
+      transform: "scale(1.08)",
+    },
+  },
+
   "@media only screen and (max-width: 768px)": {},
 }));
 
