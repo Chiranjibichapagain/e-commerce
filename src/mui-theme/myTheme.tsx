@@ -24,7 +24,10 @@ const MyTheme = createMuiTheme({
             primary: '#0055E3',
             secondary: '#E3007C',
         },
+        
     },
+    
+    
 })
 
 export default MyTheme

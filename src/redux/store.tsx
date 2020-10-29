@@ -2,19 +2,15 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
 
-
 import { AppState } from '../types/types'
 import rootSaga from './sagas'
 import createRootReducer from './reducers'
-import product from './sagas/product'
-
 
 const initial: AppState = {
   state: {
     allProducts: [],
     inCart: [],
   }
-
 }
 
 const makeStore = (initialState: any = initial) => {
@@ -22,13 +18,11 @@ const makeStore = (initialState: any = initial) => {
   const middlewares = [sagaMiddleware, thunk]
   let composeEnhancers = compose
 
-
   if (process.env.NODE_ENV === 'development') {
     if ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
       composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     }
   }
-
 
   const savedState = localStorage.getItem('state') || ''
   if (savedState) initialState = JSON.parse(savedState)

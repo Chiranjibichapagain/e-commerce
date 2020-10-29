@@ -6,14 +6,25 @@ export const SORT_PRODUCT = 'SORT_PRODUCT'
 
 
 export type Product = {
-    id:string
-    name: string
-    description: string
-    sizes:string[]
-    price: number
-    categories: string[]
-    image: string
-}
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  image?: string;
+};
+
+export type User = {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  image?: string;
+  admin?: boolean;
+  banned?: boolean;
+  transactions:any
+};
 
 export type ProductState = {
     allProducts: Product[]

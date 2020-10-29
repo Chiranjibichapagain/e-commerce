@@ -1,21 +1,50 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  main: {
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'purple',
+    padding: '20px',
+  },
   root: {
     width: "500px",
     display: "block",
-    margin: "20px auto",
     padding: "10px",
+    margin: 'auto',
+    borderRadius:'10px'
   },
+
   heading: {
     textAlign: "center",
-    paddingTop: "20px",
+    padding: "20px 0px",
+  },
+
+  google: {
+    display: "flex",
+    justifyContent: "center",
+  },
+
+  or: {
+    margin: "20px 0px 0px 0px",
+    textAlign: "center",
+  },
+
+  error: {
+    textAlign: "center",
+    color: "red",
+    marginBottom: "0px",
+  },
+  info: {
+    textAlign: "center",
+    color: "blue",
+    marginBottom: "0px",
   },
 
   form: {
     display: "flex",
     flexDirection: "column",
-    padding: "20px",
+    padding: "0px 20px 20px 20px",
   },
 
   input: {

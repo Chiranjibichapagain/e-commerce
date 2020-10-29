@@ -21,12 +21,35 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "20px",
     fontSize: "16px",
   },
+
+  error: {
+    color: 'red',
+    fontSize: '16px',
+    margin: '5px auto',
+    textAlign:'center'
+  },
+
+  match: {
+    color: 'green',
+    fontSize: '12px',
+    margin:'5px 0px'
+  },
+  
+  noMatch: {
+    color: 'red',
+    fontSize: '12px',
+    margin:'5px 0px'
+  },
+
   button: {
     margin: "40px 50px 20px 50px",
-    padding: "10px 0px",
+    padding: "15px 0px",
     backgroundColor: `${theme.palette.primary.main}`,
     color: "white",
     fontWeight: "bold",
+    border: 'none',
+    borderRadius: '4px',
+    transition:'0.3s ease-in-out',
 
     "&:hover": {
       color: "orangered",

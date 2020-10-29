@@ -1,19 +1,19 @@
 import { Dispatch } from 'redux'
 
-import { FETCH_DATA, ADD_PRODUCT, REMOVE_PRODUCT, SEARCH_PRODUCT, SORT_PRODUCT, Product } from '../types/types'
+import { getAllProducts } from "../services/productService";
+import { FETCH_DATA, ADD_PRODUCT, REMOVE_PRODUCT, Product } from '../types/types'
 
 
 
-export const getData = () => async (dispatch: Dispatch) => {
+export const getData = (url: any) => async (dispatch: Dispatch) => {
   try {
-    const response = await fetch('https://fakestoreapi.com/products')
-    const products = await response.json()
-
-    return dispatch({ type: FETCH_DATA, payload: products })
+    const response = await getAllProducts(url).then((response) => {
+      return response.data;
+    });
+    return dispatch({ type: FETCH_DATA, payload: response });
   } catch (error) {
-    console.log(error)
   }
-}
+};
 
 export function addProduct(product: Product) {
   return {

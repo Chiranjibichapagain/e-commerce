@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     width: "120px",
     display: "flex",
     padding: "20px 15px 5px 15px ",
-    justifyContent: "center",
+    justifyContent: "space-around",
     alignItems: "center",
   },
 
@@ -80,7 +80,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "20px auto",
     boxShadow: "0px 0px 3px black",
     padding: "20px",
-    borderRadius: "8px",
+    borderRadius: "10px",
+    outline:'none',
   },
 
   "@media only screen and (max-width: 768px)": {},

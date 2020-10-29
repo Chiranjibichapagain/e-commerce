@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "350px",
     borderRadius: "8px",
-    margin: " 40px 20px",
+    margin: " 10px 20px 60px 20px",
     transition: "0.5s ease-in-out",
 
     "&:hover": {
@@ -13,13 +13,20 @@ const useStyles = makeStyles((theme) => ({
   },
 
   imageBox: {
+    maxWidth: "350px",
+    maxHeight: "400px",
+    padding: "30px",
     display: "flex",
     justifyContent: "center",
-    marginButton: "5px",
   },
   image: {
-    maxWidth: "350px",
-    maxHeight: "150px",
+    minHeight: "170px",
+    maxHeight: "170px",
+    maxWidth: "200px",
+    transition: "0.5s ease-in-out",
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
   },
 
   info: {
@@ -43,13 +50,26 @@ const useStyles = makeStyles((theme) => ({
 
   actions: {
     borderRadius: "0px 0px 6px 6px",
-    backgroundColor: "#E9E9E9",
+    backgroundColor: "#C9C9C9",
     position: "relative",
     top: "28px",
     padding: "20px 15px",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+
+  disabledBtn: {
+    backgroundColor: "#B7C7B2",
+    border: "none",
+    padding: "12px",
+    borderRadius: "4px",
+    fontWeight: "bold",
+    color: "white",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    
   },
 
   toCartButton: {
@@ -62,12 +82,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    cursor: "pointer",
     transition: "0.3s ease-in-out",
 
     "&:hover": {
       backgroundColor: "white",
       color: "orangered",
-      border: "1px solid orangered",
+      // border: "1px solid orangered",
     },
   },
   viewButton: {
@@ -80,24 +101,34 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
+    cursor: "pointer",
     transition: "0.3s ease-in-out",
 
     "&:hover": {
       backgroundColor: "white",
       color: "orangered",
-      border: "1px solid orangered",
+      // border: "1px solid orangered",
     },
   },
   btnText: {
-    padding:'0px 0px 0px 10px'
+    padding: "0px 0px 0px 10px",
   },
 
   "@media only screen and (max-width: 768px)": {
     root: {
-      width: "80vw",
+      width: "100vw",
     },
     btnText: {
-      display:'none'
+      display: "none",
+    },
+    toCartButton: {
+      padding:'12px 36px'
+    },
+    viewButton: {
+      padding:'12px 36px'
+    },
+    image: {
+      maxWidth:'150px'
     }
   },
 }));
