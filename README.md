@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is MERN stack e-commerce web-app. Technology used are React, Redux, Typescript, Material UI, Context API, Express, MongoDB, Google Authentication with Google ID token, Email service for forget password with Mailgun. Server is deployed in Heroku and Client side is deployed in Netlify.
 
 ## Available Scripts
 
