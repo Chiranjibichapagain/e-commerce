@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import React, {useState, useContext} from "react";
 import { useDispatch } from "react-redux";
 
 import ProductTile from "../ProductTile";
@@ -17,10 +17,7 @@ const LandingPage = () => {
   const [data] = useStore();
   const [style, setStyle] = useState({ display: false });
 
-
-  // useEffect(() => {
-  // }, [data])
-  
+ 
    const handleDisplay = () => {
      setStyle((prevState) => ({
        display: !prevState.display,
