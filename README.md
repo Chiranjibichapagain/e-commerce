@@ -1,5 +1,7 @@
 This is MERN stack e-commerce web-app. Technology used are React, Redux, Typescript, Material UI, Context API, Express, MongoDB, Google Authentication with Google ID token, Email service for forget password with Mailgun. Server is deployed in Heroku and Client side is deployed in Netlify.
 
+Codes for the server side can be found in [this repository](https://github.com/Chiranjibichapagain/e-commerce-server)
+
 ## Available Scripts
 
 In the project directory, you can run:
